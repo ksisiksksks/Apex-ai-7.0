@@ -1,0 +1,92 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.puter.com/v2/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <h1 class="apex-logo">APEX AI</h1>
+            <div class="glow-effect"></div>
+        </div>
+        
+        <div class="sidebar-controls">
+            <button class="control-btn" id="newChatBtn">
+                <span>+</span> New Chat
+            </button>
+            
+            <div class="model-selector">
+                <label>Model</label>
+                <select id="modelSelect">
+                    <option value="gpt-4">GPT-4 Turbo</option>
+                    <option value="claude">Claude 3.5</option>
+                    <option value="gemini">Gemini Pro</option>
+                </select>
+            </div>
+            
+            <div class="toggle-group">
+                <label class="toggle-label">
+                    <input type="checkbox" id="themeToggle">
+                    <span>Light Mode</span>
+                </label>
+                
+                <label class="toggle-label">
+                    <input type="checkbox" id="soundToggle">
+                    <span>Typing Sound</span>
+                </label>
+            </div>
+            
+            <button class="control-btn" id="exportBtn">Export Chat</button>
+            <button class="control-btn danger" id="clearBtn">Clear History</button>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Messages</span>
+                <span class="stat-value" id="messageCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Est. Tokens</span>
+                <span class="stat-value" id="tokenCount">0</span>
+            </div>
+        </div>
+    </div>
+    
+    <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+    
+    <div class="main-container">
+        <div class="chat-container" id="chatContainer"></div>
+        
+        <div class="input-container">
+            <div class="input-wrapper">
+                <textarea 
+                    id="userInput" 
+                    placeholder="Message Apex AI..."
+                    rows="1"
+                ></textarea>
+                <div class="input-actions">
+                    <button class="stop-btn" id="stopBtn" style="display: none;">■ Stop</button>
+                    <button class="send-btn" id="sendBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="char-counter">
+                <span id="charCount">0</span> / 2000
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
